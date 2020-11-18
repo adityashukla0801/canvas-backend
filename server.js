@@ -12,6 +12,10 @@ app.use(cors())
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.get('/',(req,res)=> {
+  res.send("Working")
+})
+
 app.post('/api/canvas/', async (req,res)=>{
 
   var base64Data = req.body.image_url.replace(/^data:image\/png;base64,/, "");
